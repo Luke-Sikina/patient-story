@@ -21,8 +21,8 @@ public class PatientStoryProcessor {
 
     @Autowired
     public PatientStoryProcessor(
-        @Value("input.path") String inputPath,
-        @Value("output.path") String outputPath,
+        @Value("${input.path}") String inputPath,
+        @Value("${output.path}") String outputPath,
         AcceptanceCriteriaEvaluator evaluator, PatientLineParser lineParser
     ) {
         this.inputPath = inputPath;

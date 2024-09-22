@@ -24,7 +24,7 @@ public class AcceptanceCriteriaEvaluator {
             case ChronoUnit.WEEKS -> start.plusWeeks(duration.duration());
             case ChronoUnit.MONTHS -> start.plusMonths(duration.duration());
             case ChronoUnit.YEARS -> start.plusYears(duration.duration());
-            default -> start;
+            default -> throw new RuntimeException("Unexpected unit");
         };
     }
 
@@ -34,7 +34,7 @@ public class AcceptanceCriteriaEvaluator {
             case ChronoUnit.WEEKS -> start.minusWeeks(duration.duration());
             case ChronoUnit.MONTHS -> start.minusMonths(duration.duration());
             case ChronoUnit.YEARS -> start.minusYears(duration.duration());
-            default -> start;
+            default -> throw new RuntimeException("Unexpected unit");
         };
     }
 }
